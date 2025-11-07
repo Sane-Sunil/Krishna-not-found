@@ -1,0 +1,100 @@
+:root {
+    --dust-count: 20;
+    --animation-duration: 2s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+    
+}
+
+._404-div {
+  position: relative;
+  /* height: 100%; */
+  width: 100vw;
+  /* overflow: hidden; */
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: -5rem;
+}
+
+#text-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  padding: 1rem;
+  /* background-color: rgb(8, 0, 255); */
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+#krish-black-img-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#krish-black {
+    width: 30vw;
+    height: auto;
+    margin: 2rem;
+    background-color: rgb(12, 12, 12);
+    border: 2rem solid rgb(24, 24, 24);
+    border-radius: 100rem;
+    box-shadow: 0rem 0rem 0rem 3rem rgb(28, 28, 28);
+    animation: floatUpDown 6s ease-in-out infinite;
+}
+
+#krish-black:hover{
+    visibility: hidden;
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3rem); }
+}
+
+/* Dust particles */
+.dust {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-image: linear-gradient(135deg, #d6d6d6, #a8a8a8);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+  transform: translate(0,0) rotate(0deg);
+  transition: transform 2s ease-out, opacity 50s ease-out;
+  z-index: 20;
+}
+
+@keyframes disintegrate {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+    opacity: 0;
+  }
+}
